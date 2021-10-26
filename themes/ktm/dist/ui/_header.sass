@@ -1,0 +1,108 @@
+.ktm-top-bar
+    background: $yellow
+    line-height: 38px
+
+.ktm-top-social-icons
+    display: inline-block
+    vertical-align: middle
+    padding-top: 10px
+    a
+        text-decoration: none
+        display: inline-block
+        line-height: 38px
+        margin-left: 7px
+
+    svg
+        height: 21.6px
+        width: auto
+
+
+.ktm-search-bar
+    display: inline-block
+    vertical-align: top
+    margin-left: 10px
+    padding-top: 3px
+
+    input
+        width: 100px
+        height: 26px
+        background: #FFFFFF
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13)
+        border-radius: 17px
+        outline: 0
+        border: 0
+        padding: 0px 10px
+        transition: 0.4s
+        &:focus, &:active
+            width: 150px
+
+.custom-logo-link
+    margin-top: 20px
+    display: table
+    img
+        width: 100px
+        height: auto
+
+.site-branding
+    position: relative
+    z-index: 10
+
+#site-navigation
+    ul
+        padding: 0
+        margin-top: 60px
+        li
+            display: inline-block
+            margin-left: 20px
+            line-height: 10px
+            text-align: left
+            vertical-align: middle
+            a
+                color: #333
+                text-decoration: none
+                transition: 0.4s
+                &::after
+                    content: ""
+                    display: inline-block
+                    background: $yellow
+                    height: 2px
+                    width: 1%
+                    transition: 0.4s
+                    opacity: 0
+                &:hover
+                    &::after
+                        width: 100%
+                        opacity: 1
+            &.current-menu-item
+                a
+                    color: $yellow
+                    &::after
+                        width: 100%
+                        opacity: 1
+            &:last-child
+                a
+                    @extend .btn
+                    position: relative
+                    top: -5px
+                    &::after
+                        content: none
+
+.has-polorized-logo
+    position: relative
+    .custom-logo-link
+        background: url($home+'wp-content/uploads/2021/10/Logo_PNG-removebg-preview-img-2.png')
+        background-size: cover
+        line-height: 0
+
+        img
+            opacity: 0
+
+    #site-navigation
+        a
+            color: white
+
+    .site-branding-wrap
+        position: absolute
+        width: 100%
+        left: 0
+        top: 0

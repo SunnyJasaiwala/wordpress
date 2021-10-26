@@ -1,0 +1,260 @@
+.ktm-home-banner-rel
+    color: white
+    p
+        margin-bottom: 40px
+        a
+            margin-right: 15px
+
+    .container
+        margin-top: 6%
+
+.ktm-each-slide
+    display: inline-block
+    display: flex
+    img
+        display: inline-block
+        vertical-align: middle
+        max-height: 55px
+        object-fit: contain
+        padding-left: 2%
+        padding-right: 2%
+
+.ktm-home-marquee-wrap
+    overflow: hidden
+
+.ktm-home-marquee
+    white-space: nowrap
+    display: inline-block
+    animation: movemarquee 32s linear infinite
+
+.ktm-decoration-wrap
+    .container
+        position: relative
+
+    #decoration-1
+        position: absolute
+        top: -40px
+        transform: translateY(-30%)
+
+        right: 15px
+        z-index: 50
+
+.home
+    section
+        padding-top: 40px
+        padding-bottom: 40px
+
+.ktm-fp-card
+    position: relative
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.13))
+    border-radius: 16px
+    overflow: hidden
+    line-height: 0
+    display: table
+    color: white
+    transition: 0.4s
+    &:before
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        background: linear-gradient(180deg, rgba(48, 48, 48, 0) 0%, rgba(20, 20, 20, 0.12) 74.48%, rgba(0, 0, 0, 0.57) 100%)
+    &-inner
+        line-height: initial
+        position: absolute
+        left: 43px
+        right: 43px
+        bottom: 46px
+        width: calc( 100% - 86px )
+    img
+        width: 100%
+
+    h3
+        font-family: Mont
+        font-style: normal
+        font-weight: bold
+        font-size: 23px
+        line-height: 123.4%
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        margin-bottom: 0
+
+    &:hover
+        filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.43))
+        .hover-arrow
+            svg
+                transform: translateX(5px)
+
+.ktm-home-other-posts
+    ul
+        padding: 0
+        margin: 0
+        li
+            display: block
+            margin-bottom: 40px
+            a
+                text-decoration: none
+                color: inherit
+                display: flex
+                font-weight: 500
+
+                p
+                    transition: 0.4s
+
+                &:hover
+                    p:first-child
+                        opacity: 0.4
+                
+
+    p
+        margin-top: 10px
+        margin-bottom: 8px
+        line-height: 17.28px
+
+.ktm-hop-img
+    width: 240px
+    padding-right: 28px
+    img
+        width: 100%
+        box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.13)
+        border-radius: 13px
+
+
+.ktm-home-section-3
+    background: $yellow-light
+    padding-top: 60px
+    padding-bottom: 70px
+
+    .container
+        position: relative
+
+    #decoration-1
+        position: absolute
+        top: -60px
+        right: 0
+        transform: translateY(-40%)
+
+.ktm-ue-list
+    display: table
+    width: 75%
+    text-decoration: none
+    color: inherit
+    margin-bottom: 31px
+    &> div
+        float: left
+
+    p
+        font-size: 13px
+        margin-bottom: 5px
+        transition: 0.4s
+
+    &:hover
+        p
+            opacity: 0.7
+
+.ktm-ue-info
+    font-size: 13px
+    &-bottom
+        &>div
+            display: inline-block
+            width: 48%
+            &:last-child
+                text-align: right
+    &-time
+        color: $purple
+
+    .btn-u
+        padding-bottom: 0px
+        &::after
+            height: 1px
+
+.ktm-ue-date
+    width: 85px
+    padding-right: 24px
+    text-align: center
+
+.ktm-ue-cal
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13)
+    border-radius: 10px
+    &-mth
+        font-weight: 500
+        font-size: 13px
+        text-transform: uppercase
+        color: white
+        height: 18px
+        background: $purple
+        border-radius: 10px 10px 0px 0px
+
+    &-date
+        font-family: Mont
+        font-style: normal
+        font-weight: bold
+        font-size: 18px
+        background: white
+        padding: 10.5px
+        border-radius: 0 0 10px 10px
+
+.ktm-ue-info
+    width: calc( 100% - 85px )
+
+.ktm-home-section-4
+    padding-bottom: 52px
+    width: 100%
+    height: auto
+
+.ktm-home-wrap
+    position: relative
+    overflow: hidden
+.ktm-brand-identity
+    position: absolute
+    right: calc(-33% + 30px)
+    top: 50%
+
+    font-family: Mont
+    font-style: normal
+    font-weight: bold
+    font-size: 116px
+
+    letter-spacing: 0.115em
+    color: transparent
+
+    -webkit-text-stroke: 6px rgba(145, 145, 145, 0.12)
+    transform: rotate(-90deg)
+    transform-origin: center center
+
+
+.cat-card
+    position: relative
+    z-index: 10
+    padding: 4px 10px
+    &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: rgba(255, 255, 255, 0.29)
+
+.hover-arrow
+    position: absolute
+    right: 0
+    bottom: 0
+    z-index: 10
+    padding: 15px 13px
+    svg
+        transition: 0.4s
+    &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: rgba(255, 255, 255, 0.29)
+
+@keyframes movemarquee
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(-50%)

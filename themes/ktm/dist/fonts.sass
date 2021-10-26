@@ -1,0 +1,13 @@
+=font-face($family, $path, $weight: normal, $style: normal)
+  @font-face
+    font-family: $family
+    src: url('#{$path}.woff') format('woff'), url('#{$path}.woff2') format('woff2')
+    font-weight: $weight
+    font-style: $style
+
++font-face('pop', 'fonts/Poppins-Regular', normal, normal)  
++font-face('pop', 'fonts/Poppins-RegularItalic', normal, italic)  
++font-face('pop', 'fonts/Poppins-Medium', 500, normal)  
++font-face('pop', 'fonts/Poppins-MediumItalic', 500, italic)  
++font-face('mont', 'fonts/Montserrat-Bold', bold, normal)
++font-face('mont', 'fonts/Montserrat-BoldItalic', bold, italic)

@@ -1,0 +1,35 @@
+{
+  "name": "sparq.dev",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "app.js",
+  "scripts": {
+    "compile": "npx sass --watch main.sass:main.css --style compressed",
+    "optimize": "npx postcss main.css -o main.opt.css --use autoprefixer --watch",
+    "watch": "npx concurrently \"npm:compile\" \"npm:optimize\""
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      "> 0%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  },
+  "author": "hemmy",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^9.7.6",
+    "browserlist": "^1.0.1",
+    "concurrency": "0.1.4",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.9",
+    "postcss-cli": "^7.1.0",
+    "postcss-loader": "^3.0.0"
+  }
+}

@@ -1,0 +1,116 @@
+.ktm-blog-header-rel
+    h1
+        color: white
+        border-bottom: 4px solid white
+        display:  inline-block
+        margin-bottom: 0
+        margin-top: 50px
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.13))
+
+
+.ktm-blog-archive-wrap
+    padding-top: 100px
+    padding-bottom: 100px
+    article
+        padding-bottom: 50px
+        margin-bottom: 50px
+        border-bottom: 1px solid #C8C8C8
+
+.ktm-archive
+    &-blog
+        display: table
+        width: 100%
+
+        p
+            font-size: 14px
+            margin-bottom: 23px
+            a
+                color: $yellow
+                &:hover
+                    color: $purple
+
+        a
+            text-decoration: none
+            color: inherit
+            transition: 0.4s
+
+        ul
+            padding: 0
+            margin: 0
+            display: flex
+            li
+                display: block
+                font-size: 12px
+                font-style: normal
+                font-weight: normal
+                font-size: 12px
+                line-height: 18px
+                color: #A8A8A8
+                margin-right: 10px
+                flex-shrink: 0
+                svg
+                    display: inline-block
+                    vertical-align: middle
+                    position: relative
+                    top: -2px
+
+        & > div
+            float: left
+            width: 50%
+
+    &-thumbnail
+        padding-right: 25px
+        img
+            width: 100%
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13)
+            border-radius: 15px
+    &-excerpt
+        & > a:first-child:hover
+            color: $yellow
+
+.ktm-sidebar-archive
+    section
+        margin-bottom: 33px
+    h4
+        font-family: Mont
+        font-style: normal
+        font-weight: bold
+        font-size: 18px
+        line-height: 33px
+        color: #000000
+        letter-spacing: 0
+        margin-top: 0
+
+    ul
+        padding: 0
+        li
+            display: inline-block
+            font-style: normal
+            font-weight: normal
+            margin-bottom: 10px
+            &:nth-child(odd)
+                margin-right: 4px
+            a
+                background: #E1E1E1
+                border-radius: 8px
+                padding: 2px 13px
+                color: #333333
+                text-decoration: none
+                transition: 0.4s
+                font-size: 13px
+                line-height: 195.5%
+                display: inline-block
+                &:hover
+                    background: $yellow
+
+
+.ktm-sidebar-social
+    h4
+        margin-bottom: 20px
+    a
+        display: inline-block
+        text-decoration: none
+        margin-right: 16px
+        transition: 0.4s
+        &:hover
+            opacity: 0.7
