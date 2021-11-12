@@ -163,3 +163,17 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+
+if ( !function_exists( 'ktm_header_title' ) ) :
+	function ktm_header_title( $title ='' ) {
+		if ( $title == '' ) {
+			$title	= get_the_title();
+		}
+
+		if ( $title == '' ) {
+			$title	= get_bloginfo( 'name' );
+		}
+		echo '<h1 class="ktm-full-header-title">'.$title.'</h1>';
+	}
+endif;

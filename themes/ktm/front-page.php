@@ -1,19 +1,25 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+$fields =   get_fields();
+?>
 
 <div class="ktm-home-banner-rel">
-    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Banner-Image.png" alt="Keys To Me">
+    <ul>
+        <?php foreach($fields['home_page_banner'] as $banner): ?>
+        <li>
+            <div class="ktm-home-banner-img">
+                <img src="<?php echo $banner; ?>" alt="Keys To Me">
+            </div>
+        </li>
+        <?php endforeach; ?>
+    </ul>
     <div class="has-grad ktm-home-banner-abs">
         <div class="ktm-home-banner-tbl">
             <div class="ktm-home-banner-cell">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <h1>Welcome To Keys To Me</h1>
-                            <p>Keys To Me has been conducting a series of workshops to raise awareness, develop skills and provide tips on a number of important topics.</p>
-                            <p>
-                                <a href="#" title="Useful Resources" class="btn-glass">Useful Resources</a>
-                                <a href="#" title="Upcoming Events" class="btn">Upcoming Events</a>
-                            </p>
+                            <?= $fields['home_page_banner_content']; ?>
                         </div>
                     </div>
                 </div>
@@ -39,22 +45,15 @@
         <div class="ktm-home-marquee-wrap">
             <div class="ktm-home-marquee">
                 <div class="ktm-each-slide">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Google.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Twitter.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Facebook.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Airbnb.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Google.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Twitter.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Facebook.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Airbnb.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Google.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Twitter.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Facebook.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Airbnb.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Google.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Twitter.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Facebook.png" alt="Google - Keys To Me proud partnership">
-                    <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/Airbnb.png" alt="Google - Keys To Me proud partnership">
+                    <?php 
+                        for( $i = 1; $i <= 4; $i++ ){
+                            foreach( $fields['sponsors'] as $sponsor ){
+                                ?>
+                                <img src="<?= $sponsor; ?>" alt="Keys To Me proud partnership">
+                                <?php
+                            }
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -67,7 +66,7 @@
                     <h2>Recent Posts</h2>
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="#" class="btn" title="Read More Articles">Read More Articles >></a>
+                    <a href="<?= get_permalink( 14 ); ?>" class="btn" title="Read More Articles">Read More Articles >></a>
                 </div>
             </div>
 

@@ -10,16 +10,15 @@
 
 .ktm-blog-archive-wrap
     padding-top: 100px
-    padding-bottom: 100px
-    article
-        padding-bottom: 50px
-        margin-bottom: 50px
-        border-bottom: 1px solid #C8C8C8
+    padding-bottom: 100px        
 
 .ktm-archive
     &-blog
         display: table
         width: 100%
+        padding-bottom: 50px
+        margin-bottom: 50px
+        border-bottom: 1px solid #C8C8C8
 
         p
             font-size: 14px
@@ -34,26 +33,6 @@
             color: inherit
             transition: 0.4s
 
-        ul
-            padding: 0
-            margin: 0
-            display: flex
-            li
-                display: block
-                font-size: 12px
-                font-style: normal
-                font-weight: normal
-                font-size: 12px
-                line-height: 18px
-                color: #A8A8A8
-                margin-right: 10px
-                flex-shrink: 0
-                svg
-                    display: inline-block
-                    vertical-align: middle
-                    position: relative
-                    top: -2px
-
         & > div
             float: left
             width: 50%
@@ -67,6 +46,32 @@
     &-excerpt
         & > a:first-child:hover
             color: $yellow
+
+.ktm-archive-meta
+    ul
+        padding: 0
+        margin: 0
+        display: flex
+        li
+            display: block
+            font-size: 12px
+            font-style: normal
+            font-weight: normal
+            font-size: 12px
+            line-height: 18px
+            color: #A8A8A8
+            margin-right: 10px
+            flex-shrink: 0
+            svg
+                display: inline-block
+                vertical-align: middle
+                position: relative
+                top: -2px
+
+body:not(.single-post)
+    .ktm-archive-meta
+        ul
+            justify-content: space-between
 
 .ktm-sidebar-archive
     section
@@ -112,5 +117,52 @@
         text-decoration: none
         margin-right: 16px
         transition: 0.4s
+        svg
+            path
+                fill: #333333
         &:hover
             opacity: 0.7
+
+
+.single-blog-container
+    position: relative
+    padding-top: 50px
+
+    .ktm-share-media-inner
+        position: absolute
+        top: 29.5%
+        left: -30px
+        text-align: center
+        span
+            font-size: 10px
+        ul
+            padding: 0
+            margin-top: 5px
+            margin-bottom: 0
+            li
+                display: block
+                text-align: center
+
+                path
+                    transition: 0.4s
+                    fill-opacity: 1
+
+                a:hover
+                    path
+                        fill: $yellow
+                        opacity: 1
+
+    .ktm-archive-meta
+        padding-bottom: 30px
+
+    h1
+        margin-bottom: 5px
+
+    .blog-image
+        img
+            width: 100%
+            border-radius: 15px
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13)
+            margin-bottom: 20px
+            max-height: 384px
+            object-fit: cover

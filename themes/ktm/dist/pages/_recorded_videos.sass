@@ -1,0 +1,68 @@
+.recorded-video-container
+    padding-top: 40px
+    padding-bottom: 40px
+.recorded-video-item
+    img
+        width: 100%
+        height: 200px
+        object-fit: cover
+        border-radius: 5px
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+
+.recorded-video-item-thumbnail
+    position: relative
+    line-height: 0
+    &::after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: url($home+'wp-content/uploads/2021/11/play-2.png') center center no-repeat, rgba(0, 0, 0, 0.2)
+        border-radius: 5px
+        transition: opacity 0.3s ease-in-out
+
+.recorded-video-wrap
+    color: inherit
+    text-decoration: none
+    margin-bottom: 30px
+    display: table
+    width: 100%
+    h3
+        font-size: 20px
+        min-height: 60px
+
+
+.recorded-video-modal
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.5)
+    z-index: 9999
+    display: none
+    iframe
+        width: 100%
+    .recorded-video-modal-content
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 100%
+        max-width: 800px
+        background: #fff
+        border-radius: 5px
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+        padding: 20px
+        .recorded-video-modal-close
+            text-align: center
+            a
+                color: #777
+
+.ktm-filter-recorded-vids 
+    li
+        margin-right: 4px
+    a.active
+        background: $yellow
