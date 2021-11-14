@@ -1,7 +1,2 @@
-fonts/
 node_modules/
 package-lock.json
-
-// compiled files
-main.css.map
-main.opt.css
