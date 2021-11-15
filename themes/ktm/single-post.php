@@ -44,7 +44,7 @@
                     <?php the_content(); ?>
                 </div><!-- /.blog-post -->
 
-                <?php comment_form(); ?>
+                <?php comments_template(); ?>
             <?php endwhile; endif; ?>
         </div>
 
