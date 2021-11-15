@@ -3,5 +3,5 @@ deployment:
  tasks:
  - export DEPLOYPATH=/home/enactusflemi99/public_html/keystome.enactusfleming.ca/wp-content/
  - /bin/cp -a themes/ $DEPLOYPATH
- - /bin/cp -a plugins/ $DEPLOYPATH
- - /bin/cp -a uploads/ $DEPLOYPATH
+#  - /bin/cp -a plugins/ $DEPLOYPATH
+#  - /bin/cp -a uploads/ $DEPLOYPATH

@@ -43,6 +43,8 @@
                     </div>
                     <?php the_content(); ?>
                 </div><!-- /.blog-post -->
+
+                <?php comment_form(); ?>
             <?php endwhile; endif; ?>
         </div>
 
