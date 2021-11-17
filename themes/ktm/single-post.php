@@ -50,7 +50,7 @@
                                     $categories =   wp_get_post_categories( $post->ID );
                                     $cat_string  =   array();
                                     foreach ( $categories as $category ){
-                                        $cat_string[] = "<a href='".get_term_link( $category )."' title='{$category->name}'>{$category->name}</a>";
+                                        $cat_string[] = "<a href='".get_term_link( $category )."' title='".$category->name."'>".$category->name."</a>";
                                     }
 
                                     echo implode( ", ", $cat_string );
