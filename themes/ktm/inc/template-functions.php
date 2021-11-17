@@ -100,3 +100,22 @@ function ktm_render_blog( $id = '' ) {
 	</article><!-- article -->
 	<?php
 }
+
+/**
+ * Show a card about the user
+ */
+function ktm_user_promo() {
+	global $post;
+	
+	?>
+	<div class="row">
+		<div class="col-md-3">
+			<?php get_avatar($post->post_author); ?>
+		</div>
+
+		<div class="col-md-9">
+			<?= get_the_author_meta('description', $post->post_author); ?>
+		</div>
+	</div>
+	<?php
+}

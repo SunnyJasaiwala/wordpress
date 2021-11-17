@@ -63,6 +63,7 @@
                     <?php the_content(); ?>
                 </div><!-- /.blog-post -->
 
+                <?php ktm_user_promo(); ?>
                 <?php comments_template(); ?>
             <?php endwhile; endif; ?>
         </div>
