@@ -34,9 +34,8 @@
                                 </svg>
 
                                 <?php 
-                                    $first_name =   get_user_meta( $new_user->ID, 'first_name', true );
-                                    $last_name =   get_user_meta( $new_user->ID, 'last_name', true );
-                                    echo "$first_name $last_name";
+                                    $user_info = get_userdata( $post->post_author );
+                                    echo $user_info->display_name;
                                 ?>
                                
                             </li>
