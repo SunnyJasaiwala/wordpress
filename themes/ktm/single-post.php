@@ -13,7 +13,9 @@
                 </div>
             <?php endif; ?>
             <!-- Blog Post -->
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+                global $post;
+            ?>
                 <div class="blog-post">
                     <h1 class="blog-post-title"><?php the_title(); ?></h1>
                     <div class="ktm-archive-meta">
@@ -23,7 +25,7 @@
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M3.9 2.6H2.6V1.94998H1.3V3.9H11.7V1.94998H10.4V2.6H9.1V1.94998H3.9V2.6ZM11.7 5.2H1.3V11.7H11.7V5.2ZM9.1 0.65H3.9V0H2.6V0.65H1.3C0.58203 0.65 0 1.23203 0 1.95V11.7C0 12.418 0.58203 13 1.3 13H11.7C12.418 13 13 12.418 13 11.7V1.95C13 1.23203 12.418 0.65 11.7 0.65H10.4V0H9.1V0.65ZM3.25 7.8V6.5H4.55V7.8H3.25ZM5.85 7.8H7.15V6.5H5.85V7.8ZM8.45 7.8V6.5H9.75V7.8H8.45ZM3.25 9.1V10.4H4.55V9.1H3.25ZM7.15 10.4H5.85V9.1H7.15V10.4Z" fill="#FFC220"/>
                                 </svg>
 
-                                Oct 1st, 2021
+                                <?= date( 'M dS, Y', strtotime($post->post_date) ); ?>
                             </li>
 
                             <li>
