@@ -59,3 +59,56 @@ function ktm_customize_preview_js() {
 	wp_enqueue_script( 'ktm-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'ktm_customize_preview_js' );
+
+
+
+
+/**
+ * Social Media Customizer
+ */
+add_action( "customize_register", "ktm_social_media_customizer" );
+
+function ktm_social_media_customizer( $wp_customize ) {
+
+	// Declare Sidebar option
+	$wp_customize->add_section('ktm_social_media', array(
+        'title'    => __('Social Media', 'cumber'),
+        'priority' => 120,
+    ));
+	
+	$fields	=	array(
+		"ktm_meta_facebook"		=>	"https://facebook.com",
+		"ktm_meta_twitter"		=>	"https://twitter.com",
+		"ktm_meta_lkdin"		=>	"https://linkedin.com",
+		"ktm_meta_instagram"	=>	"https://instagram.com",
+		"ktm_meta_youtube"		=>	"https://youtube.com"
+	);
+
+	$labels	=	array(
+		"ktm_meta_facebook"		=>	"Facebook",
+		"ktm_meta_twitter"		=>	"Twitter",
+		"ktm_meta_lkdin"		=>	"LinkedIn",
+		"ktm_meta_instagram"	=>	"Instagram",
+		"ktm_meta_youtube"		=>	"Youtube"
+	);
+
+	foreach ( $fields as $key => $field ) {
+		$wp_customize->add_setting("ktm_social_media_op[{$key}]", array(
+			'default'        => $field,
+			'capability'     => 'edit_theme_options',
+			'type'           => 'option',
+		));
+		
+		$wp_customize->add_control('ktm_'.$key, array(
+			'label'      => __($labels[$key], 'cumber'),
+			'section'    => 'ktm_social_media',
+			'settings'   => "ktm_social_media_op[{$key}]",
+		));
+	}
+}
+
+
+function ktm_get_media_link( $media ='facebook' ) {
+	$social_media = maybe_unserialize( get_option('cumber_social_media_op') );
+	return $social_media['ktm_meta_'.$media];
+}
