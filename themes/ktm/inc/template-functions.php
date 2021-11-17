@@ -108,13 +108,15 @@ function ktm_user_promo() {
 	global $post;
 	
 	?>
-	<div class="row">
+	<div class="row single-author-card">
 		<div class="col-md-3">
 			<?php 
-				$author_img  =	get_avatar_url($post->post_author); 
-				
+				$author_img  =	get_avatar_url($post->post_author, array(
+					'size'		=>	120,
+					'default'	=>	home_url("/wp-content/uploads/2021/11/ktm_placeholder.png")
+				)); 
 			?>
-			<img src="<?= $author_img != '' ? $author_img : home_url("/wp-content/uploads/2021/11/ktm_placeholder.png") ?>" alt="Photo of <?= get_the_author_meta('description', $post->post_author); ?>" />
+			<img src="<?= $author_img; ?>" alt="Photo of <?= get_the_author_meta('display_name', $post->post_author); ?>" />
 		</div>
 
 		<div class="col-md-9">
