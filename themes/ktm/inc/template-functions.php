@@ -110,10 +110,15 @@ function ktm_user_promo() {
 	?>
 	<div class="row">
 		<div class="col-md-3">
-			<?php get_avatar($post->post_author); ?>
+			<?php 
+				$author_img  =	get_avatar_url($post->post_author); 
+				
+			?>
+			<img src="<?= $author_img != '' ? $author_img : home_url("/wp-content/uploads/2021/11/ktm_placeholder.png") ?>" alt="Photo of <?= get_the_author_meta('description', $post->post_author); ?>" />
 		</div>
 
 		<div class="col-md-9">
+			<h4>About Author</h4>
 			<?= get_the_author_meta('description', $post->post_author); ?>
 		</div>
 	</div>
