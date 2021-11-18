@@ -126,3 +126,30 @@ function ktm_user_promo() {
 	</div>
 	<?php
 }
+
+
+/**
+ * Add custom post status
+ */
+function ktm_custom_post_status () {
+	register_post_status( 'under_review', array(
+		'label'					=>	_x( 'Under Review', 'ktm' ),
+		'label_count'           => _n_noop( 'Under Review <span class="count">(%s)</span>', 'Under Review <span class="count">(%s)</span>' ),
+		'public'				=>	false,
+		'internal'				=>	true,
+		'publicly_queryable'	=>	true,
+		'exclude_from_search'	=>	true
+	));
+}
+
+add_action('publish_post', 'ktm_custom_post_status_students');
+function ktm_custom_post_status_students($post_id) {
+	if ( current_user_can( 'student' ) ) {
+		$set_post = array(
+			'ID'            => $post_id,
+			'post_status'   => 'future'
+		);
+
+		wp_update_post( $set_post );
+	}
+}
