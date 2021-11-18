@@ -147,7 +147,7 @@ function ktm_custom_post_status_students($post_id) {
 	if ( current_user_can( 'student' ) ) {
 		$set_post = array(
 			'ID'            => $post_id,
-			'post_status'   => 'future'
+			'post_status'   => 'under_review'
 		);
 
 		wp_update_post( $set_post );
