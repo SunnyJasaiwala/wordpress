@@ -188,6 +188,10 @@ $fields =   get_fields();
                 </div><!-- .col-md-6 -->
 
                 <?php endforeach; ?>
+
+                <p>
+                    <a href="<?= home_url(); ?>/events/" title="View Calendar" class="btn">View Calendar</a>
+                </p>
             </div>
         </div>
     </section><!-- .ktm-home-section-3 -->
