@@ -145,31 +145,36 @@ $fields =   get_fields();
             <h2>Upcoming Workshops</h2>
 
             <?php
-            $posts  =   tribe_get_events();
-
-            echo json_encode( $posts );
-            echo json_encode( get_post_meta($posts[0]->ID, '', true) );
+            $events  =   tribe_get_events([
+                'posts_per_page' => 5
+             ]);
             ?>
             <div class="row">
+                <?php 
+                    foreach ($events as $event):
+                        $fields     =   get_post_meta( $event->ID, "", true );
+                        $time_start =   strtotime($fields['_EventStartDate'][0]);
+                        $time_end   =   strtotime($fields['_EventEndDate'][0]);
+                ?>
                 <div class="col-md-6">
-                    <a href="#" title="Kawartha Credit Union - Financial Planning and Peace of Mind" class="ktm-ue-list">
+                    <a href="<?= get_permalink($event->ID); ?>" title="<?= $event->post_title; ?>" class="ktm-ue-list">
                         <div class="ktm-ue-date">
                             <div class="ktm-ue-cal">
                                 <div class="ktm-ue-cal-mth">
-                                    Sep
+                                    <?= date('M', $time_start); ?>
                                 </div>
 
                                 <div class="ktm-ue-cal-date">
-                                    30
+                                <?= date('d', $time_start); ?>
                                 </div>
                             </div>
                         </div>
 
                         <div class="ktm-ue-info">
-                            <p>Kawartha Credit Union - Financial Planning and Peace of Mind</p>
+                            <p><?= $event->post_title; ?></p>
                             <div class="ktm-ue-info-bottom">
                                 <div class="ktm-ue-info-time">
-                                    3:00PM - 4:00PM
+                                    <?= date('g:iA', $time_start); ?> - <?= date('g:iA', $time_end); ?>
                                 </div>
 
                                 <div class="ktm-ue-info-view">
@@ -181,6 +186,8 @@ $fields =   get_fields();
                         </div>
                     </a>
                 </div><!-- .col-md-6 -->
+
+                <?php endforeach; ?>
 
                 <div class="col-md-6">
                     <a href="#" title="Kawartha Credit Union - Financial Planning and Peace of Mind" class="ktm-ue-list">
