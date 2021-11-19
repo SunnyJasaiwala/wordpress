@@ -145,10 +145,7 @@ $fields =   get_fields();
             <h2>Upcoming Workshops</h2>
 
             <?php
-            $posts  =   get_post(array(
-                'post_type '        =>  'tribe_events',
-                'posts_per_page'    =>  -1
-            ));
+            $posts  =   tribe_get_events();
 
             echo json_encode( $posts );
             echo json_encode( get_post_meta($posts[0]->ID, '', true) );
