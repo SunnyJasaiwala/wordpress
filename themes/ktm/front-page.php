@@ -189,7 +189,7 @@ $fields =   get_fields();
 
                 <?php endforeach; ?>
 
-                <p>
+                <p class="col-md-12">
                     <a href="<?= home_url(); ?>/events/" title="View Calendar" class="btn">View Calendar</a>
                 </p>
             </div>
