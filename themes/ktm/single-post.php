@@ -17,7 +17,12 @@
                 global $post;
             ?>
                 <div class="blog-post">
-                    <h1 class="blog-post-title"><?php the_title(); ?></h1>
+                    <h1 class="blog-post-title">
+                        <?php the_title(); ?>
+                        <script>
+                            console.log(<?= json_encode( get_post_meta($post->ID, '', true) ) ?>);
+                        </script>
+                    </h1>
                     <div class="ktm-archive-meta">
                         <ul>
                             <li>
