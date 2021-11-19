@@ -142,6 +142,9 @@ function ktm_custom_post_status () {
 	));
 }
 
+/**
+ * Update post status for students to `under_review`
+ */
 add_action('publish_post', 'ktm_custom_post_status_students');
 function ktm_custom_post_status_students($post_id) {
 	if ( current_user_can( 'student' ) ) {
