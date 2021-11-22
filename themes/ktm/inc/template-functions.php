@@ -156,3 +156,25 @@ function ktm_custom_post_status_students($post_id) {
 		wp_update_post( $set_post );
 	}
 }
+
+/**
+ * Get all post ID and title for selecting featured post
+ */
+function get_all_posts_options() {
+	$return_posts	=	array();
+	$posts	=	get_posts(array(
+		'post_type'			=>	'post',
+		'posts_per_page'	=>	-1,
+		'orderby'			=>	'title',
+		'order'				=>	'asc'
+	));
+	
+	if ( count( $posts ) ) {
+		foreach ( $posts as $post ) {
+			$return_posts[$post->ID]	=	$post->post_title;
+		}
+	}
+	
+	
+	return $return_posts;
+}

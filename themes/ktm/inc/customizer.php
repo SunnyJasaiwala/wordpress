@@ -108,6 +108,33 @@ function ktm_social_media_customizer( $wp_customize ) {
 }
 
 
+
+/* Featured Post */
+
+add_action( "customize_register", "ktm_featured_posts_option" );
+
+function ktm_featured_posts_option( $wp_customize ) {
+	// Declare Sidebar option
+	$wp_customize->add_section('ktm_post_select', array(
+		'title'    => __('Featured Post', 'ktm'),
+		'priority' => 120,
+	));
+
+	$wp_customize->add_setting("ktm_post_select_option", array(
+		'default'        => $field,
+		'capability'     => 'edit_theme_options',
+		'type'           => 'option',
+	));
+		
+	$wp_customize->add_control( 'ktm_post_select_option', array(
+		'type' 		=> 'select',
+		'section' 	=> 'ktm_post_select', // Add a default or your own section
+		'label' 	=> __( 'Select Post to be featured' ),
+		'choices' 	=> get_all_posts_options(),
+	) );
+
+}
+
 function ktm_get_media_link( $media ='facebook' ) {
 	$social_media = maybe_unserialize( get_option('cumber_social_media_op') );
 	return $social_media['ktm_meta_'.$media];

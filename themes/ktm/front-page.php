@@ -71,13 +71,17 @@ $fields =   get_fields();
             </div>
 
             <div class="row">
+                <?php $post = get_post( get_option('sparq_post_select_option') ); ?>
                 <div class="col-md-6 ktm-home-featured-post">
-                    <a href="#" title="Financial Growth - Important Tip for 2022" class="ktm-fp-card">
-                        <img src="<?= home_url(); ?>/wp-content/uploads/2021/10/featured-post-2.png" title="Financial Growth - Important Tip for 2022">
+                    <a href="<?= get_permalink( $post->ID ); ?>" title="<?= $post->post_title; ?>" class="ktm-fp-card">
+                        <img src="<?= get_the_post_thumbnail_url ( $post->ID ); ?>" title="<?= $post->post_title; ?>">
                         <div class="ktm-fp-card-inner">
-                            <span class="cat-card">Finance</span>
+                            <span class="cat-card"><?php 
+                                $categories = get_the_category();
+                                echo $categories[0]->name;
+                            ?></span>
                             <h3>
-                                Financial Growth - Important Tip for 2022
+                                <?= $post->post_title; ?>
                             </h3>
                         </div>
                         <span class="hover-arrow">
