@@ -89,7 +89,20 @@
 									)
 								);
 								?>
+
+								<a href="#" class="ktm-mobile-menu-close" name="Close">
+									x close
+								</a>
 							</nav><!-- #site-navigation -->
+
+							<a href="#" class="ktm-mobile-menu" title="Menu">
+								<svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0 2C0 0.895431 0.895431 0 2 0H33C34.1046 0 35 0.895431 35 2C35 3.10457 34.1046 4 33 4H2C0.89543 4 0 3.10457 0 2Z" fill="white"/>
+									<path d="M0 17C0 15.8954 0.895431 15 2 15H33C34.1046 15 35 15.8954 35 17C35 18.1046 34.1046 19 33 19H2C0.89543 19 0 18.1046 0 17Z" fill="white"/>
+									<path d="M0 32C0 30.8954 0.895431 30 2 30H33C34.1046 30 35 30.8954 35 32C35 33.1046 34.1046 34 33 34H2C0.89543 34 0 33.1046 0 32Z" fill="white"/>
+								</svg>
+							</a>
+
 						</div>
 					</div>
 				</div>
