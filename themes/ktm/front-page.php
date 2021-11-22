@@ -71,7 +71,7 @@ $fields =   get_fields();
             </div>
 
             <div class="row">
-                <?php $post = get_post( get_option('sparq_post_select_option') ); ?>
+                <?php $post = get_post( get_option('ktm_post_select_option') ); ?>
                 <div class="col-md-6 ktm-home-featured-post">
                     <a href="<?= get_permalink( $post->ID ); ?>" title="<?= $post->post_title; ?>" class="ktm-fp-card">
                         <img src="<?= get_the_post_thumbnail_url ( $post->ID ); ?>" title="<?= $post->post_title; ?>">

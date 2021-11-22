@@ -136,6 +136,6 @@ function ktm_featured_posts_option( $wp_customize ) {
 }
 
 function ktm_get_media_link( $media ='facebook' ) {
-	$social_media = maybe_unserialize( get_option('cumber_social_media_op') );
+	$social_media = maybe_unserialize( get_option('ktm_social_media_op') );
 	return $social_media['ktm_meta_'.$media];
 }
