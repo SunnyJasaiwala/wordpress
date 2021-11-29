@@ -10,6 +10,18 @@
  */
 
 ?>
+
+	<?php 
+	/** Show wave design on Login/Register */
+	if ( get_the_ID() == 153 ) {
+		?>
+		<svg width="1277" height="97" viewBox="0 0 1277 97" fill="none" xmlns="http://www.w3.org/2000/svg" class="ktm-home-section-4">
+			<path d="M347.5 91.1891C238.3 109.883 67.6667 79.0306 -4 61.2677V0H1274.5L1277 69.8166C1154.5 80.3603 972 25.6469 873.5 18.2378C772.491 10.64 484 67.8219 347.5 91.1891Z" fill="#FFC220"/>
+			<path d="M924.402 67.6868C1033.94 81.5626 1205.11 58.6619 1277 45.4771V0H-5.49219L-8 51.8227C114.883 59.6489 297.952 19.0369 396.76 13.5374C498.084 7.89773 787.476 50.3421 924.402 67.6868Z" fill="#FFFBC0" fill-opacity="0.72"/>
+		</svg>
+		<?php
+	}
+	?>
 	</div><!-- #page-content -->
 	
 	<footer id="colophon" class="site-footer">
