@@ -102,5 +102,12 @@
         $("#site-navigation").fadeOut();
         return false;
     });
+
+    /** Opportunities Toggle Slide */
+    $(document).on("click", ".ktm-opportunities-list li", function(){
+        $(this).find(".ktm-opp-content").slideToggle();
+        $(this).toggleClass("active");
+        return false;
+    });
   
 })(jQuery);
