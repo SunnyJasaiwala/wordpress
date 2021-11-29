@@ -200,5 +200,6 @@ add_action ('admin_head', 'ktm_control_user_menu');
 function ktm_control_user_menu () {
 	if ( current_user_can('student') ) {
 		remove_menu_page( 'edit-comments.php' );
+		remove_menu_page( 'tools.php' );
 	}
 }
