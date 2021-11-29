@@ -179,13 +179,26 @@ function get_all_posts_options() {
 	return $return_posts;
 }
 
-
+/**
+ * Hook to show only relevant content to students
+ */
 add_action('pre_get_posts', 'query_set_only_author' );
 function query_set_only_author( $wp_query ) {
- global $current_user;
- if( is_admin() && current_user_can('student') ) {
-    $wp_query->set( 'author', $current_user->ID );
-    add_filter('views_edit-post', 'fix_post_counts');
-    add_filter('views_upload', 'fix_media_counts');
- }
+	global $current_user;
+	if( is_admin() && current_user_can('student') ) {
+		$wp_query->set( 'author', $current_user->ID );
+		add_filter('views_edit-post', 'fix_post_counts');
+		add_filter('views_upload', 'fix_media_counts');
+	}
+}
+
+
+/**
+ * Remove menu items based on user role
+ */
+add_action ('admin_header', 'ktm_control_user_menu');
+function ktm_control_user_menu () {
+	if ( current_user_can('student') ) {
+		remove_menu_page( 'edit-comments.php' );
+	}
 }
