@@ -15,7 +15,7 @@
  */
 if ( is_user_logged_in() ) {
 	if ( current_user_can('student') ) {
-		if ( get_post_ID() == 153 ) {
+		if ( get_the_ID() == 153 ) {
 			wp_redirect( home_url('/wp-admin'), 301 );
 			exit;
 		}
