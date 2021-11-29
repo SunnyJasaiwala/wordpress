@@ -109,6 +109,9 @@ function ktm_user_promo() {
 	
 	?>
 	<div class="row single-author-card">
+		<div class="col-md-12">
+			<hr>
+		</div>
 		<div class="col-md-3">
 			<?php 
 				$author_img  =	get_avatar_url($post->post_author, array(
