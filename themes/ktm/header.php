@@ -56,7 +56,7 @@ if ( is_user_logged_in() ) {
 						 */
 						if ( is_user_logged_in() ) {
 							$current_user	=	wp_get_current_user();
-							$menu	= str_replace( "Login / Register", "Hello, {$current_user->user_first_name}", $menu );
+							$menu	= str_replace( "Login / Register", "Hello, {$current_user->user_firstname}", $menu );
 						}
 
 						echo $menu;
