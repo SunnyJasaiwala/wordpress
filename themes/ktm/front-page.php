@@ -66,7 +66,7 @@ $fields =   get_fields();
                     <h2>Recent Posts</h2>
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="<?= get_permalink( 14 ); ?>" class="btn" title="Read More Articles" class="ktm-read-more-articles">Read More Articles >></a>
+                    <a href="<?= get_permalink( 14 ); ?>" class="btn ktm-read-more-articles" title="Read More Articles">Read More Articles >></a>
                 </div>
             </div>
 
