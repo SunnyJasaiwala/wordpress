@@ -30,7 +30,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-11',
+								'menu_id'        => 'ktm-top-menu',
+							)
+						);
+						?>
 					</div>
 
 					<div class="col-md-6 text-right">

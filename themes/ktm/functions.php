@@ -56,6 +56,12 @@ if ( ! function_exists( 'ktm_setup' ) ) :
 
 		register_nav_menus(
 			array(
+				'menu-11' => esc_html__( 'Header Top', 'ktm' ),
+			)
+		);
+
+		register_nav_menus(
+			array(
 				'menu-2' => esc_html__( 'Links', 'ktm' ),
 			)
 		);
