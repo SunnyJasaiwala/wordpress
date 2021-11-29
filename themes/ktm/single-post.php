@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 
 <div class="container single-blog-container">
-    <div class="ktm-share-media">
-        <?php get_template_part( 'templates/single/post/share-media' ); ?>
-    </div>
     <div class="row">
         <div class="col-md-9">
             <!-- blog image -->
@@ -17,6 +14,9 @@
                 global $post;
             ?>
                 <div class="blog-post">
+                    <div class="ktm-share-media">
+                        <?php get_template_part( 'templates/single/post/share-media' ); ?>
+                    </div>
                     <h1 class="blog-post-title">
                         <?php the_title(); ?>
                     </h1>
