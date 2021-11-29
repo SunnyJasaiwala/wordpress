@@ -150,7 +150,7 @@ $fields =   get_fields();
 
             <?php
             $events  =   tribe_get_events([
-                'posts_per_page' => 5
+                'posts_per_page' => 4
              ]);
             ?>
             <div class="row">
@@ -159,6 +159,11 @@ $fields =   get_fields();
                         $fields     =   get_post_meta( $event->ID, "", true );
                         $time_start =   strtotime($fields['_EventStartDate'][0]);
                         $time_end   =   strtotime($fields['_EventEndDate'][0]);
+
+                        $from_to_time   =   date('g:iA', $time_start) . ' - ' . date('g:iA', $time_end);
+                        if ( $from_to_time == '12:00AM - 11:59AM' ) {
+                            $from_to_time = 'ALL DAY';
+                        }
                 ?>
                 <div class="col-md-6">
                     <a href="<?= get_permalink($event->ID); ?>" title="<?= $event->post_title; ?>" class="ktm-ue-list">
@@ -178,7 +183,7 @@ $fields =   get_fields();
                             <p><?= $event->post_title; ?></p>
                             <div class="ktm-ue-info-bottom">
                                 <div class="ktm-ue-info-time">
-                                    <?= date('g:iA', $time_start); ?> - <?= date('g:iA', $time_end); ?>
+                                    <?= $from_to_time; ?>
                                 </div>
 
                                 <div class="ktm-ue-info-view">
