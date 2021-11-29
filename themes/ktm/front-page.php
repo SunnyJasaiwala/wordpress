@@ -161,7 +161,7 @@ $fields =   get_fields();
                         $time_end   =   strtotime($fields['_EventEndDate'][0]);
 
                         $from_to_time   =   date('g:iA', $time_start) . ' - ' . date('g:iA', $time_end);
-                        if ( $from_to_time == '12:00AM - 11:59AM' ) {
+                        if ( $from_to_time == '12:00AM - 11:59PM' ) {
                             $from_to_time = 'ALL DAY';
                         }
                 ?>
