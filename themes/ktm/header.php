@@ -9,6 +9,19 @@
  * @package Enactus_Fleming_-_Keys_To_Me
  */
 
+
+/**
+ * When user is logged as `student` on Login / Register page, redirect them to `wp-admin`
+ */
+if ( is_user_logged_in() ) {
+	if ( current_user_can('student') ) {
+		if ( get_post_ID() == 153 ) {
+			wp_redirect( home_url('/wp-admin'), 301 );
+			exit;
+		}
+	}
+}
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
