@@ -14,9 +14,6 @@
                 global $post;
             ?>
                 <div class="blog-post">
-                    <div class="ktm-share-media">
-                        <?php get_template_part( 'templates/single/post/share-media' ); ?>
-                    </div>
                     <h1 class="blog-post-title">
                         <?php the_title(); ?>
                     </h1>
@@ -61,6 +58,10 @@
                                 ?>
                             </li>
                         </ul>
+                    </div>
+
+                    <div class="ktm-share-media">
+                        <?php get_template_part( 'templates/single/post/share-media' ); ?>
                     </div>
                     <?php the_content(); ?>
                 </div><!-- /.blog-post -->
