@@ -14,11 +14,9 @@
  * When user is logged as `student` on Login / Register page, redirect them to `wp-admin`
  */
 if ( is_user_logged_in() ) {
-	if ( current_user_can('student') ) {
-		if ( get_the_ID() == 153 ) {
-			wp_redirect( home_url('/wp-admin'), 301 );
-			exit;
-		}
+	if ( get_the_ID() == 153 ) {
+		wp_redirect( home_url('/wp-admin'), 301 );
+		exit;
 	}
 }
 
@@ -44,12 +42,24 @@ if ( is_user_logged_in() ) {
 				<div class="row">
 					<div class="col-md-6">
 						<?php
+						ob_start();
 						wp_nav_menu(
 							array(
 								'theme_location' => 'menu-11',
 								'menu_id'        => 'ktm-top-menu',
 							)
 						);
+						$menu 	= ob_get_clean();
+
+						/**
+						 * Do some modification to the menu if user is logged in
+						 */
+						if ( is_user_logged_in() ) {
+							$current_user	=	wp_get_current_user();
+							$menu	= str_replace( "Login / Register", "Hello, {$current_user->user_first_name}", $menu );
+						}
+
+						echo $menu;
 						?>
 					</div>
 
