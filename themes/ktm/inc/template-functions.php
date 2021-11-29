@@ -115,13 +115,14 @@ function ktm_user_promo() {
 					'size'		=>	120,
 					'default'	=>	home_url("/wp-content/uploads/2021/11/ktm_placeholder.png")
 				)); 
+				$author_name	=	get_the_author_meta('display_name', $post->post_author);
 			?>
-			<img src="<?= $author_img; ?>" alt="Photo of <?= get_the_author_meta('display_name', $post->post_author); ?>" />
+			<img src="<?= $author_img; ?>" alt="Photo of <?= $author_name; ?>" />
 		</div>
 
 		<div class="col-md-9">
 			<h4>About Author</h4>
-			<?= get_the_author_meta('description', $post->post_author); ?>
+			<?= wpautop( "<b>{$author_name}: </b>". get_the_author_meta('description', $post->post_author) ); ?>
 		</div>
 	</div>
 	<?php
