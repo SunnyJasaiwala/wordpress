@@ -29,66 +29,69 @@
         }, 3000);
     }
 
-    /** Recorded Videos Filter Script */
-    var qsRegex;
-    var $grid = $('.recorded-video-iso').isotope({
-        itemSelector: '.recorded-video-iso .col-md-6',
-        layoutMode: 'fitRows',
-        filter: function() {
-            return qsRegex ? $(this).text().match( qsRegex ) : true;
-        }
-    });
+    if ( $("body").hasClass("page-id-15") ) {
 
-    $(document).on('focus', '#recorded-videos-search', function(){
-        if ($(this).val() == '') {
+        /** Recorded Videos Filter Script */
+        var qsRegex;
+        var $grid = $('.recorded-video-iso').isotope({
+            itemSelector: '.recorded-video-iso .col-md-6',
+            layoutMode: 'fitRows',
+            filter: function() {
+                return qsRegex ? $(this).text().match( qsRegex ) : true;
+            }
+        });
+
+        $(document).on('focus', '#recorded-videos-search', function(){
+            if ($(this).val() == '') {
+                $(".ktm-filter-recorded-vids a").removeClass("active");
+                $(".ktm-filter-recorded-vids li:first-child a").addClass("active");
+
+                var $grid = $('.recorded-video-iso').isotope({
+                    itemSelector: '.recorded-video-iso .col-md-6',
+                    layoutMode: 'fitRows',
+                    filter: function() {
+                        return qsRegex ? $(this).text().match( qsRegex ) : true;
+                    }
+                });
+            }
+        })
+
+        var $quicksearch = $('#recorded-videos-search').keyup( debounce( function() {
+            qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+            $grid.isotope();
+        }, 200 ) );
+
+        // debounce so filtering doesn't happen every millisecond
+        function debounce( fn, threshold ) {
+            var timeout;
+            threshold = threshold || 100;
+            return function debounced() {
+            clearTimeout( timeout );
+            var args = arguments;
+            var _this = this;
+            function delayed() {
+                fn.apply( _this, args );
+            }
+            timeout = setTimeout( delayed, threshold );
+            };
+        }
+
+        $(document).on('click', ".ktm-filter-recorded-vids a", function(){
             $(".ktm-filter-recorded-vids a").removeClass("active");
-            $(".ktm-filter-recorded-vids li:first-child a").addClass("active");
-
-            var $grid = $('.recorded-video-iso').isotope({
-                itemSelector: '.recorded-video-iso .col-md-6',
-                layoutMode: 'fitRows',
-                filter: function() {
-                    return qsRegex ? $(this).text().match( qsRegex ) : true;
-                }
-            });
-        }
-    })
-
-    var $quicksearch = $('#recorded-videos-search').keyup( debounce( function() {
-        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-        $grid.isotope();
-    }, 200 ) );
-
-    // debounce so filtering doesn't happen every millisecond
-    function debounce( fn, threshold ) {
-        var timeout;
-        threshold = threshold || 100;
-        return function debounced() {
-        clearTimeout( timeout );
-        var args = arguments;
-        var _this = this;
-        function delayed() {
-            fn.apply( _this, args );
-        }
-        timeout = setTimeout( delayed, threshold );
-        };
-    }
-
-    $(document).on('click', ".ktm-filter-recorded-vids a", function(){
-        $(".ktm-filter-recorded-vids a").removeClass("active");
-        $('#recorded-videos-search').val('');
-        if ( $(this).hasClass("active") ) {
-            $(this).removeClass("active");
-            $grid.isotope({ filter: '*' });
-        } else {
-            $(this).addClass("active");
-            var filterValue = $(this).attr('data-filter');
-            $grid.isotope({ filter: filterValue == "*" ? filterValue : '.' + filterValue });
+            $('#recorded-videos-search').val('');
+            if ( $(this).hasClass("active") ) {
+                $(this).removeClass("active");
+                $grid.isotope({ filter: '*' });
+            } else {
+                $(this).addClass("active");
+                var filterValue = $(this).attr('data-filter');
+                $grid.isotope({ filter: filterValue == "*" ? filterValue : '.' + filterValue });
+                
+            }
             
-        }
-        
-        return false;
-    });
+            return false;
+        });
+    }
 
     $(document).on("click", ".ktm-mobile-menu", function(){
         $("#site-navigation").fadeIn();
