@@ -11,7 +11,7 @@ get_header(); ?>
     <ul class="ktm-opportunities-list">
         <?php 
         $posts  =   get_posts(array(
-            'post_type'         =>  'job_postings',
+            'post_type'         =>  'job_posting',
             'posts_per_page'    =>  -1,
             'orderby'           =>  'menu_order',
             'order'             =>  'ASC'
