@@ -196,7 +196,7 @@ function query_set_only_author( $wp_query ) {
 /**
  * Remove menu items based on user role
  */
-add_action ('admin_header', 'ktm_control_user_menu');
+add_action ('admin_head', 'ktm_control_user_menu');
 function ktm_control_user_menu () {
 	if ( current_user_can('student') ) {
 		remove_menu_page( 'edit-comments.php' );
