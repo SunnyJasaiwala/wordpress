@@ -111,6 +111,9 @@ if ( is_user_logged_in() ) {
 
 						<div class="col-md-8 text-right">
 							<nav id="site-navigation" class="main-navigation">
+								<div class="ktm-mobile-menu-logo has-polorized-logo">
+									<?php the_custom_logo(); ?>
+								</div>
 								<?php
 								wp_nav_menu(
 									array(
