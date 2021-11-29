@@ -28,3 +28,53 @@
 
     .ktm-brand-identity
         display: none
+
+    #site-navigation 
+        position: fixed 
+        top: 0 
+        left: 0 
+        right: 0 
+        bottom: 0 
+        background: #ffd25c 
+        z-index: 9999 
+        padding: 50px 
+        text-align: center 
+        ul 
+            margin: 0 
+            text-align: center 
+            li 
+                display: block 
+                text-align: center 
+                a 
+                    font-size: 50px 
+                    line-height: 80px 
+                    color: #fff 
+                    width: 100% 
+                    display: block 
+                    &:after 
+                        content: none 
+    #site-navigation 
+        ul 
+            li 
+                &:last-child 
+                    a 
+                        padding: 0 
+                        background: none !important 
+                        border: 0 
+                        color: white !important 
+                        box-shadow: none !important 
+                &.current-menu-item 
+                    &:not(:last-child) 
+                        a 
+                            color: white 
+                            background: #ffc220 
+    .ktm-mobile-menu-close 
+        display: block 
+        text-align: center 
+        margin-top: 40px 
+        background: white 
+        display: inline-block 
+        padding: 3px 10px 
+        text-decoration: none 
+        color: black 
+        border-radius: 14px 

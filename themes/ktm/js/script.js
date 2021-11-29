@@ -89,5 +89,15 @@
         
         return false;
     });
+
+    $(document).on("click", ".ktm-mobile-menu", function(){
+        $("#site-navigation").fadeIn();
+        return false;
+    });
+
+    $(document).on("click", ".ktm-mobile-menu-close", function() {
+        $("#site-navigation").fadeOut();
+        return false;
+    });
   
 })(jQuery);
