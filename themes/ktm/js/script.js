@@ -104,9 +104,9 @@
     });
 
     /** Opportunities Toggle Slide */
-    $(document).on("click", ".ktm-opportunities-list li", function(){
-        $(this).find(".ktm-opp-content").slideToggle();
-        $(this).toggleClass("active");
+    $(document).on("click", ".ktm-opportunities-list li .ktm-opp-main", function(){
+        $(this).next().slideToggle();
+        $(this).parent().toggleClass("active");
         return false;
     });
   
