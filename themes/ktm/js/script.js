@@ -109,5 +109,11 @@
         $(this).parent().toggleClass("active");
         return false;
     });
+
+    if ( $("body").hasClass("single-job_posting") ) {
+        setTimeout(function(){
+            $("input#acf-field_61b0b685e9a7e").attr("pattern", "[a-z0-9._%+-]+@flemingcollege.ca$");
+        }, 300);
+    }
   
 })(jQuery);
