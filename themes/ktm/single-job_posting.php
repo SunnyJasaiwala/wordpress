@@ -40,6 +40,7 @@
             $('html, body').animate({
                 scrollTop: $("#message").offset().top
             }, 1000);
-        });                
+        });       
+    </script>         
 <?php endif; ?>
 <?php get_footer(); ?>
