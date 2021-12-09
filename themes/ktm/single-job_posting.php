@@ -14,15 +14,16 @@
                 <div class="col-md-7">
                     <?php
                         acf_form(array(
-                            'post_id'		=> 'new_post',
-                            'field_groups'	=> array( 'group_61b0b670bbe5f' ),
-                            'new_post'		=> array(
+                            'post_id'		    => 'new_post',
+                            'post_title'	    => true,
+                            'field_groups'	    => array( 'group_61b0b670bbe5f' ),
+                            'new_post'		    => array(
                                 'post_type'		=> 'job_applicant',
                                 'post_status'	=> 'publish'
                             ),
-                            'post_title'	=> true,
-                            'uploader'		=> 'basic',
-                            'submit_value'	=> 'Apply Now'
+                            'uploader'		    => 'basic',
+                            'submit_value'	    => __('Apply Now', 'ktm'),
+                            'updated_message'   => __('You job posting was submitted', 'ktm')
                         ));
                     ?>
                 </div>
