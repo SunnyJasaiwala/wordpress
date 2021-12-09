@@ -21,9 +21,10 @@
                                 'post_type'		=> 'job_applicant',
                                 'post_status'	=> 'publish'
                             ),
+                            'return'            => get_permalink() . "#message", // scroll to message
                             'uploader'		    => 'basic',
                             'submit_value'	    => __('Apply Now', 'ktm'),
-                            'updated_message'   => __('You job posting was submitted', 'ktm')
+                            'updated_message'   => __('You job application was submitted', 'ktm')
                         ));
                     ?>
                 </div>
