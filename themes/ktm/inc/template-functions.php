@@ -206,6 +206,10 @@ function ktm_control_user_menu () {
 		remove_menu_page( 'edit-comments.php' );
 		remove_menu_page( 'tools.php' );
 	}
+
+	if ( current_user_can('subadmin') ) {
+		remove_menu_page( 'admin.php?page=wpuf-post-forms' );
+	}
 }
 
 /**
