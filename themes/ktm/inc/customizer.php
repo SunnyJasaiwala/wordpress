@@ -81,7 +81,7 @@ function ktm_social_media_customizer( $wp_customize ) {
 		"ktm_meta_twitter"		=>	"https://twitter.com",
 		"ktm_meta_lkdin"		=>	"https://linkedin.com",
 		"ktm_meta_instagram"	=>	"https://instagram.com",
-		"ktm_meta_youtube"		=>	"https://youtube.com"
+		//"ktm_meta_youtube"		=>	"https://youtube.com"
 	);
 
 	$labels	=	array(
@@ -89,7 +89,7 @@ function ktm_social_media_customizer( $wp_customize ) {
 		"ktm_meta_twitter"		=>	"Twitter",
 		"ktm_meta_lkdin"		=>	"LinkedIn",
 		"ktm_meta_instagram"	=>	"Instagram",
-		"ktm_meta_youtube"		=>	"Youtube"
+		//"ktm_meta_youtube"		=>	"Youtube"
 	);
 
 	foreach ( $fields as $key => $field ) {
