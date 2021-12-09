@@ -207,7 +207,7 @@ function ktm_control_user_menu () {
 		remove_menu_page( 'tools.php' );
 	}
 
-	if ( current_user_can('subadmin') ) {
+	if ( current_user_can('sub_admins') ) {
 		remove_menu_page( 'admin.php?page=wpuf-post-forms' );
 	}
 }
