@@ -115,5 +115,10 @@
             $("input#acf-field_61b0b685e9a7e").attr("pattern", "[a-z0-9._%+-]+@flemingcollege.ca$");
         }, 300);
     }
+
+    // Update post title when full name is typed
+    $(document).on("click", 'input[name="acf[field_61b0b67be9a7d]"]', function(){
+        $('input[name="acf[_post_title]"]').val($(this).val());
+    });
   
 })(jQuery);
