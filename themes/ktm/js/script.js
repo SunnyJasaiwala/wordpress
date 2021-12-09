@@ -117,7 +117,7 @@
     }
 
     // Update post title when full name is typed
-    $(document).on("click", 'input[name="acf[field_61b0b67be9a7d]"]', function(){
+    $(document).on("input", 'input[name="acf[field_61b0b67be9a7d]"]', function(){
         $('input[name="acf[_post_title]"]').val($(this).val());
     });
   
