@@ -224,32 +224,32 @@ function ktm_do_acf_form_head() {
 /**
  * Job Applicant Presave Hook
  */
-add_filter('acf/pre_save_post' , 'ktm_do_pre_save_post' );
-function ktm_do_pre_save_post( $post_id ) {
+// add_filter('acf/pre_save_post' , 'ktm_do_pre_save_post' );
+// function ktm_do_pre_save_post( $post_id ) {
 
-	// Bail if not logged in or not able to post
-	if ( is_single() && get_post_type() == 'job_posting' ) {
-		return;
-	}
+// 	// Bail if not logged in or not able to post
+// 	if ( is_single() && get_post_type() == 'job_posting' ) {
+// 		return;
+// 	}
 
-	// check if this is to be a new post
-	if( $post_id != 'new_post' ) {
-		return $post_id;
-	}
+// 	// check if this is to be a new post
+// 	if( $post_id != 'new_post' ) {
+// 		return $post_id;
+// 	}
 
-	// Create a new post
-	$post = array(
-		'post_type'     => 'post', // Your post type ( post, page, custom post type )
-		'post_status'   => 'publish', // (publish, draft, private, etc.)
-		'post_title'    => wp_strip_all_tags($_POST['acf']['field_61b0b67be9a7d']), // Post Title ACF field key
-		'post_content'  => ''
-	);
+// 	// Create a new post
+// 	$post = array(
+// 		'post_type'     => 'post', // Your post type ( post, page, custom post type )
+// 		'post_status'   => 'publish', // (publish, draft, private, etc.)
+// 		'post_title'    => wp_strip_all_tags($_POST['acf']['field_61b0b67be9a7d']), // Post Title ACF field key
+// 		'post_content'  => ''
+// 	);
 
-	// insert the post
-	$post_id = wp_insert_post( $post );
+// 	// insert the post
+// 	$post_id = wp_insert_post( $post );
 
-	// Save the fields to the post
-	do_action( 'acf/save_post' , $post_id );
+// 	// Save the fields to the post
+// 	do_action( 'acf/save_post' , $post_id );
 
-	return $post_id;
-}
+// 	return $post_id;
+// }
