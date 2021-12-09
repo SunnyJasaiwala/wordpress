@@ -43,11 +43,14 @@ function ktm_render_blog( $id = '' ) {
 	}
 
 	$post =	get_post( $id );
+
+	$featured_img_url = get_the_post_thumbnail_url($post, 'full'); 
+	$featured_img_url = $featured_img_url != "" ? $featured_img_url : home_url("/wp-content/uploads/2021/10/blog1.png");
 	?>
 	<article class="ktm-archive-blog">
 		<div class="ktm-archive-thumbnail">
 			<a href="<?= get_permalink($id); ?>" title="<?= get_the_title(); ?>">
-				<img src="<?= home_url(); ?>/wp-content/uploads/2021/10/blog1.png" alt="">
+				<img src="<?= $featured_img_url; ?>" alt="">
 			</a>
 		</div>
 
