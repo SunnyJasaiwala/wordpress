@@ -10,6 +10,7 @@
         <div class="job-posting-apply-now">
             <!-- ACF Fields: Job Applicants Fields -->
             <h3>Apply for this position: <?php the_title(); ?></h3>
+            
             <div class="row">
                 <div class="col-md-7">
                     <?php
@@ -21,7 +22,6 @@
                                 'post_type'		=> 'job_applicant',
                                 'post_status'	=> 'publish'
                             ),
-                            'return'            => get_permalink() . "#message", // scroll to message
                             'uploader'		    => 'basic',
                             'submit_value'	    => __('Apply Now', 'ktm'),
                             'updated_message'   => __('You job application was submitted', 'ktm')
@@ -33,4 +33,13 @@
     <?php endwhile; ?>
 </div>
 
+<?php if ( isset( $_GET['updated'] ) && $_GET['updated'] == true ) : ?>
+    <!-- jQuery scroll to #message when success -->
+    <script>
+        jQuery(document).ready(function($) {
+            $('html, body').animate({
+                scrollTop: $("#message").offset().top
+            }, 1000);
+        });                
+<?php endif; ?>
 <?php get_footer(); ?>
